@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  * @author XuqiangDuan
  * @Date 2018/10/8 10:32
+ * 备注:GenerateAllSetter 调用对象的所有 set 方法并且赋予默认值;
  **/
 public class Main {
 

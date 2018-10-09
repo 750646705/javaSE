@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * @author XuqiangDuan
  * @Date 2018/10/8 16:13
+ * 备注：GsonFormat 根据JSON文本生成JAVA类;
  **/
 @Data
 public class GsonFormatDemo {
