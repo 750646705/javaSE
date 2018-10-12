@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class ListDemo {
 
     public static void main(String[] args){
-        ArrayList<String> stringArrayList = new ArrayList<String>();
+        ArrayList<String> stringArrayList = new ArrayList<String>(2);
         stringArrayList.add("AAA");
         stringArrayList.add("FFF");
         stringArrayList.add("AAA");

@@ -3,6 +3,7 @@ package transformation;
 /**
  * @author XuqiangDuan
  * @Date 2018/9/30 16:44
+ * 备注:十六进制数
  **/
 public class HexadecimalDemo {
     public static void main(String[] args){

@@ -20,9 +20,9 @@ public class IntegerDemo {
      */
     public static void main(String[] args){
         Integer i1 = new Integer(10);
-        Integer i2 = 10;
+        Integer i2 = Integer.valueOf(10);
         Integer i3 = new Integer(10);
-        Integer i4 = 10;
+        Integer i4 = Integer.valueOf(10);
         /**
          * 结果 false false true
          */
@@ -32,9 +32,9 @@ public class IntegerDemo {
 
         System.out.println("---------------------------------------------------------------------");
         Integer ii1 = new Integer(128);
-        Integer ii2 = 128;
+        Integer ii2 = Integer.valueOf(128);
         Integer ii3 = new Integer(128);
-        Integer ii4 = 128;
+        Integer ii4 = Integer.valueOf(128);
         /**
          * 结果 false false false
          */
