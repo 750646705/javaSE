@@ -50,8 +50,8 @@ JavaSE是在日常工作中整理的功能demo（如Java操作Excel表格、冒�
 
 
 ### 交流学习 Communication
-##### 1.[数理强强CSDN博客 链接](https://blog.csdn.net/qq_32730819/)
-##### 2.[数理强强GitHub 链接](https://github.com/750646705/)
+##### 1.[CSDN博客@数理强强 链接](https://blog.csdn.net/qq_32730819/)
+##### 2.[GitHub@数理强强 链接](https://github.com/750646705/)
 ##### 三人行必有我师焉@数理强强
 ##### 版权所有 翻版必究
 
