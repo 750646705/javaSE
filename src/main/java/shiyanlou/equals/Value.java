@@ -1,4 +1,4 @@
-package shiyanlou.test.equals;
+package shiyanlou.equals;
 
 /**
  * @author XuqiangDuan

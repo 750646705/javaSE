@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 /**
  * @author XuqiangDuan
  * @Date 2018/9/14 17:02
- * 备注 JAVA8新特性 Stream API
+ * 备注 Java8新特性 Stream API
  **/
 public class StreamDemo {
 
