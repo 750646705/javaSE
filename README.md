@@ -1,4 +1,4 @@
-##JavaSE
+###JavaSE
 
 ### 序言 Preface
 JavaSE是在日常工作中整理的功能demo（如Java操作Excel表格、冒泡算法等）
