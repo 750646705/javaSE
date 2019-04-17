@@ -48,6 +48,11 @@ JavaSE是在日常工作中整理的功能demo（如Java操作Excel表格、冒�
 ##### 13.1 Hexadecimal 十六进制数输出
 ##### 13.2 Integer 整型范围
 
+#### 14.brushAccess **博客自刷**
+##### 14.1 DemoOne dos命令运行bat脚本
+##### 14.2 DemoTwo Java运行dos命令
+##### 14.3 DemoThree Java循环有序执行
+##### 14.4 DemoFour 引入多线程
 
 ### 交流学习 Communication
 ##### 1.[CSDN博客@数理强强 链接](https://blog.csdn.net/qq_32730819/)
