@@ -34,8 +34,10 @@ public class DemoThree {
             "https://blog.csdn.net/qq_32730819/article/details/89279714",
             //MySQL导入CSV/TXT等数据源中数据操作流程及注意事项
             "https://blog.csdn.net/qq_32730819/article/details/88073041",
-            //Redis
+            //Redis概述 - Redis 安装步骤 & 基本操作
             "https://blog.csdn.net/qq_32730819/article/details/87924466",
+            //Redis全局命令&数据结构详解
+            "https://blog.csdn.net/qq_32730819/article/details/89480293",
             //Linux常用快捷键、技巧&通配符
             "https://blog.csdn.net/qq_32730819/article/details/89161867",
             //Linux VI VIM 文书编辑器
@@ -83,8 +85,8 @@ public class DemoThree {
         try {
             Desktop desktop = Desktop.getDesktop();
             for(int i=0 ; i<60000 ; ++i){
-                //随机选择博客 [0,24] & 浏览器打开[0,1]
-                int url = i%25;
+                //随机选择博客 [0,26] & 浏览器打开[0,1]
+                int url = i%27;
                 int browser = i%2;
                 //选定博客uri
                 URI uri = new URI(urls[url]);
@@ -94,7 +96,7 @@ public class DemoThree {
                 //Runtime类在浏览器中打开指定链接
                 Runtime.getRuntime().exec("cmd /c start "+bro+uri);
                 //等待5秒
-                TimeUnit.MILLISECONDS.sleep(3000);
+                TimeUnit.MILLISECONDS.sleep(2800);
                 //关闭浏览器
                 Runtime.getRuntime().exec("taskkill /F /IM "+bro);
                 //等待1秒

@@ -34,23 +34,25 @@ public class DemoFour extends Thread{
             "https://blog.csdn.net/qq_32730819/article/details/89279714",
             //MySQL导入CSV/TXT等数据源中数据操作流程及注意事项
             "https://blog.csdn.net/qq_32730819/article/details/88073041",
-            //Redis
-            "https://blog.csdn.net/qq_32730819/article/details/87924466"
+            //Redis概述 - Redis 安装步骤 & 基本操作
+            "https://blog.csdn.net/qq_32730819/article/details/87924466",
+            //Redis全局命令&数据结构详解
+            "https://blog.csdn.net/qq_32730819/article/details/89480293"
     };
 
     @Override
     public void run(){
         try {
             for(int i=0 ; i<60000 ; ++i){
-                //随机选择博客 [0,11]
-                int url = i%12;
+                //随机选择博客 [0,12]
+                int url = i%13;
                 //选定博客uri
                 URI uri = new URI(urls[url]);
                 System.err.println(i + "次运行 | 浏览器:chrome.exe | 博客链接:"+url+" | 时间:" + System.currentTimeMillis());
                 //Runtime类在浏览器中打开指定链接
                 Runtime.getRuntime().exec("cmd /c start chrome.exe "+uri);
                 //等待5秒
-                TimeUnit.MILLISECONDS.sleep(4900);
+                TimeUnit.MILLISECONDS.sleep(4800);
                 //关闭浏览器
                 Runtime.getRuntime().exec("taskkill /F /IM chrome.exe");
                 //等待1秒

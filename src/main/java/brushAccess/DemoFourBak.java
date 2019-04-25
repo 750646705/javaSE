@@ -31,6 +31,8 @@ public class DemoFourBak extends Thread{
             "https://blog.csdn.net/qq_32730819/article/details/87365101",
             //Java基础——System.out.print与System.err.print区别
             "https://blog.csdn.net/qq_32730819/article/details/87075464",
+            //Java垃圾回收机制
+            "https://blog.csdn.net/qq_32730819/article/details/89204489",
             //技术概念：敏捷开发、持续集成、持续交付和DevOps的定义及关系梳理
             "https://blog.csdn.net/qq_32730819/article/details/87716858",
             //技术概念：算法帝国
@@ -45,15 +47,15 @@ public class DemoFourBak extends Thread{
     public void run() {
         try {
             for(int i=0 ; i<60000 ; ++i){
-                //随机选择博客 [0,12]
-                int url = i%13;
+                //随机选择博客 [0,13]
+                int url = i%14;
                 //选定博客uri
                 URI uri = new URI(urls[url]);
                 System.err.println(i + "次运行 | 浏览器:iexplore.exe | 博客链接:"+url+" | 时间:" + System.currentTimeMillis());
                 //Runtime类在浏览器中打开指定链接
                 Runtime.getRuntime().exec("cmd /c start iexplore.exe "+uri);
                 //等待5秒
-                TimeUnit.MILLISECONDS.sleep(4500);
+                TimeUnit.MILLISECONDS.sleep(4300);
                 //关闭浏览器
                 Runtime.getRuntime().exec("taskkill /F /IM iexplore.exe");
                 //等待1秒
