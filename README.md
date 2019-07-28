@@ -5,13 +5,15 @@ JavaSE是在日常工作中整理的功能demo（如Java操作Excel表格、冒�
 总结这些JavaSE常用demo，记录工作中常用的方法并方便日后复用。
 
 ### 功能简介 Introduction
-#### 1.adapter  **设计模式-适配器**
+#### 1.adapter      **设计模式-适配器**
 
 #### 2.algorithm    **常用算法**
-##### 2.1 BubbleSort    **冒泡排序算法**
-##### 2.2 TODO：other
+##### 2.1 sort      **排序算法**
+###### 2.1.1        **冒泡排序**
 
-#### 3.collection  **集合**
+##### 2.2 other     **其他算法**
+
+#### 3.collection   **集合**
 ##### 3.1 List
 ##### 3.2 Set
 ##### 3.3 Map
