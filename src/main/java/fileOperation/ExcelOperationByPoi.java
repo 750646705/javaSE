@@ -12,6 +12,7 @@ import java.util.*;
 
 /**
  * Excel表格读/写 -- POI方法
+ *
  * @author XUQIANG_DUAN
  * @date 2019/2/25
  * @time 15:18
@@ -19,7 +20,8 @@ import java.util.*;
 public class ExcelOperationByPoi {
     /**
      * 读操作 -- 结果为String/数组/集合
-     * @param pathName　文件路径
+     *
+     * @param pathName 　文件路径
      * @return
      * @throws Exception
      */
@@ -34,12 +36,12 @@ public class ExcelOperationByPoi {
         XSSFWorkbook xwb = null;
         //表格（第一个 index=0）
         Sheet sheet = null;
-        if(pathName.indexOf(".xlsx") >= 0){
+        if (pathName.indexOf(".xlsx") >= 0) {
             xwb = new XSSFWorkbook(fs);
-            sheet = xwb.getSheetAt(0);
-        }else{
+            sheet = xwb.getSheetAt(1);
+        } else {
             hwb = new HSSFWorkbook(fs);
-            sheet = hwb.getSheetAt(0);
+            sheet = hwb.getSheetAt(1);
         }
         int firstRowNum = sheet.getFirstRowNum();
         int lastRowNum = sheet.getLastRowNum();
@@ -49,17 +51,17 @@ public class ExcelOperationByPoi {
             //取得第i行 （第一行i=0是表头）
             Row row = sheet.getRow(i);
             if (row != null) {
-                if (row.getCell(0) != null) {
-                    row.getCell(0).setCellType(CellType.STRING);
-                    first = row.getCell(0).getStringCellValue();
-                }
+//                if (row.getCell(0) != null) {
+//                    row.getCell(0).setCellType(CellType.STRING);
+//                    first = row.getCell(0).getStringCellValue();
+//                }
                 if (row.getCell(1) != null) {
                     row.getCell(1).setCellType(CellType.STRING);
                     second = row.getCell(1).getStringCellValue();
                 }
             }
             System.out.println("第" + i + "行信息为：" + first + " | " + second);
-            result.add(first+second);
+            result.add(second);
         }
         return result;
 
@@ -67,6 +69,7 @@ public class ExcelOperationByPoi {
 
     /**
      * 读操作 -- 结果为封装的实体对象
+     *
      * @param pathName
      * @return
      * @throws Exception
@@ -82,10 +85,10 @@ public class ExcelOperationByPoi {
         XSSFWorkbook xwb = null;
         //表格（第一个 index=0）
         Sheet sheet = null;
-        if(pathName.indexOf(".xlsx") >= 0){
+        if (pathName.indexOf(".xlsx") >= 0) {
             xwb = new XSSFWorkbook(fs);
             sheet = xwb.getSheetAt(0);
-        }else{
+        } else {
             hwb = new HSSFWorkbook(fs);
             sheet = hwb.getSheetAt(0);
         }
@@ -97,17 +100,17 @@ public class ExcelOperationByPoi {
             Row row = sheet.getRow(i);
             if (row != null) {
                 if (row.getCell(0) != null) {
-                    if(CellType.STRING.equals(row.getCell(0).getCellType())) {
+                    if (CellType.STRING.equals(row.getCell(0).getCellType())) {
                         student.setName(row.getCell(0).getStringCellValue());
-                    }else {
-                        System.out.println("注意：（"+i+"行, "+0+"列）数据格式（STRING）有误请核对 | " +row.getCell(0).getCellType());
+                    } else {
+                        System.out.println("注意：（" + i + "行, " + 0 + "列）数据格式（STRING）有误请核对 | " + row.getCell(0).getCellType());
                     }
                 }
                 if (row.getCell(1) != null) {
                     if (CellType.NUMERIC.equals(row.getCell(1).getCellType())) {
-                        student.setId((int)row.getCell(1).getNumericCellValue());
-                    }else{
-                        System.out.println("注意：（"+i+"行, "+1+"列）数据格式（NUMERIC）有误请核对 | " +row.getCell(1).getCellType());
+                        student.setId((int) row.getCell(1).getNumericCellValue());
+                    } else {
+                        System.out.println("注意：（" + i + "行, " + 1 + "列）数据格式（NUMERIC）有误请核对 | " + row.getCell(1).getCellType());
                     }
                 }
             }
@@ -120,11 +123,12 @@ public class ExcelOperationByPoi {
 
     /**
      * 写操作 -- 参数为封装的实体对象
-     * @param pathName 文件路径
+     *
+     * @param pathName  文件路径
      * @param sheetName 表格名称
-     * @param style .xls/.xlsx文件类别
-     * @param titles 表头信息
-     * @param datas 表格信息
+     * @param style     .xls/.xlsx文件类别
+     * @param titles    表头信息
+     * @param datas     表格信息
      * @return
      */
     public static boolean writeExcel(
@@ -157,19 +161,19 @@ public class ExcelOperationByPoi {
             Student student = iterator.next();
             //实体对象属性个数
             int length = student.getClass().getDeclaredFields().length;
-            System.out.println("Student类属性数量为："+length);
-            for (int i = 0; i < length ; i++) {
+            System.out.println("Student类属性数量为：" + length);
+            for (int i = 0; i < length; i++) {
                 Cell cell = row.createCell(i);
                 //依次对应实体对象的属性
-                switch (i){
-                    case 0 :
+                switch (i) {
+                    case 0:
                         cell.setCellValue(student.getId());
                         break;
-                    case 1 :
+                    case 1:
                         cell.setCellValue(student.getName());
                         break;
                     default:
-                        System.out.println("【异常】Student类属性数量为："+length+" | i="+i);
+                        System.out.println("【异常】Student类属性数量为：" + length + " | i=" + i);
                         break;
                 }
             }
@@ -190,14 +194,14 @@ public class ExcelOperationByPoi {
             if (null != outputStream) {
                 outputStream.close();
             }
-            if(null != workbook){
+            if (null != workbook) {
                 workbook.close();
             }
         }
         return isCorrect;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         long begin = System.currentTimeMillis();
         String path = "C:/Users/xuqiang_duan/Desktop/test/test.xlsx";
         String pathName = "C:/Users/xuqiang_duan/Desktop/test.xls";
@@ -212,16 +216,16 @@ public class ExcelOperationByPoi {
         student.setId(10001);
         datas.add(student);
         try {
-//            ExcelOperationByPoi.readExcel(path);
+            ExcelOperationByPoi.readExcel(path);
 //            ExcelOperationByPoi.readExcelBak(path);
-            Boolean boo = ExcelOperationByPoi.writeExcel(pathName, sheetName, style, titles, datas);
-            System.out.println("写入结果："+boo);
+//            Boolean boo = ExcelOperationByPoi.writeExcel(pathName, sheetName, style, titles, datas);
+//            System.out.println("写入结果："+boo);
         } catch (Exception e) {
             e.printStackTrace();
         }
         long end = System.currentTimeMillis();
         long use = end - begin;
-        System.out.println("结束测试--用时："+use+"毫秒");
+        System.out.println("结束测试--用时：" + use + "毫秒");
 
     }
 

@@ -9,6 +9,7 @@ public interface Aggregate {
 
     /**
      * 迭代器
+     *
      * @return abstract Iterator
      */
     public abstract Iterator iterator();

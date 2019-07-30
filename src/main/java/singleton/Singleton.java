@@ -1,10 +1,9 @@
 package singleton;
+
 /**
  * 单例模式：设计模式之一，确保某个类只有一个实例对象。
  * 实现形式：懒汉式和饿汉式
  * 逼格备注：枚举式
- *
- *
  *
  * @author XuqiangDuan
  * @Date 2018/7/30 12:45
@@ -22,19 +21,19 @@ public class Singleton {
      */
     private static Singleton singleton = null;
 
-    private Singleton(){
+    private Singleton() {
         slowdown();
         System.out.println("创建单类的一个实例");
     }
 
-    public static synchronized Singleton getInstance(){
-        if(singleton == null){
+    public static synchronized Singleton getInstance() {
+        if (singleton == null) {
             singleton = new Singleton();
         }
         return singleton;
     }
 
-    private void slowdown(){
+    private void slowdown() {
 
         try {
             Thread.sleep(1000);

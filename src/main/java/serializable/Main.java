@@ -9,7 +9,7 @@ import java.io.*;
 public class Main {
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         /**
          * 序列化对象
          */
@@ -36,10 +36,10 @@ public class Main {
         try {
             FileInputStream fileInputStream = new FileInputStream("E:/test/serializable.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            serializableDemo1 = (SerializableDemo)objectInputStream.readObject();
+            serializableDemo1 = (SerializableDemo) objectInputStream.readObject();
             fileInputStream.close();
             objectInputStream.close();
-            System.out.printf("serializableDemo.id:"+serializableDemo1.getId()+" | serializableDemo.name:"+serializableDemo1.getName()+" | serializableDemo.address:"+serializableDemo1.getAddress());
+            System.out.printf("serializableDemo.id:" + serializableDemo1.getId() + " | serializableDemo.name:" + serializableDemo1.getName() + " | serializableDemo.address:" + serializableDemo1.getAddress());
         } catch (Exception e) {
             e.printStackTrace();
         }

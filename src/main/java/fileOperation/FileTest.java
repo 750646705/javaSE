@@ -14,6 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  * 文件读取
+ *
  * @author XUQIANG_DUAN
  * @date 2019/2/13
  * @time 14:59
@@ -23,9 +24,10 @@ public class FileTest {
     /**
      * 1.读取文件夹名称
      * 2.配成功位置迁移
+     *
      * @param pathName
      */
-    public static void doChange(String pathName, String fileName) throws Exception{
+    public static void doChange(String pathName, String fileName) throws Exception {
 
         //读取文件夹名称
         File file = new File(pathName);
@@ -37,16 +39,17 @@ public class FileTest {
 //            }
             if (fileList[i].isDirectory()) {
                 String dirName = fileList[i].getName();
-                if(dirName.equals(fileName)){
-                    System.out.println("第"+i+"次相同：" + dirName);
+                if (dirName.indexOf(fileName) >= 0) {
+                    System.out.println("第" + i + "次相同：" + dirName);
                     //配成功位置迁移
                     //需要复制的目标文件或目标文件夹
-                    String oPathName = "C:/Users/xuqiang_duan/Desktop/test/"+dirName;
+                    String oPathName = pathName + "/" + dirName;
                     File oFile = new File(oPathName);
                     //复制到的位置
-                    String topathname = "C:/Users/xuqiang_duan/Desktop/test/new/";
+                    String topathname = "E:/项目需求文档/IBM项目整理/售药机图片集/基础数据/new";
                     File toFile = new File(topathname);
                     FileTest.copy(oFile, toFile);
+
                 }
             }
         }
@@ -54,6 +57,7 @@ public class FileTest {
 
     /**
      * 文件复制
+     *
      * @param file
      * @param toFile
      * @throws Exception
@@ -65,12 +69,12 @@ public class FileTest {
         FileOutputStream fos;
         if (file.isDirectory()) {
             String filepath = file.getAbsolutePath();
-            filepath=filepath.replaceAll("\\\\", "/");
+            filepath = filepath.replaceAll("\\\\", "/");
             String toFilepath = toFile.getAbsolutePath();
-            toFilepath=toFilepath.replaceAll("\\\\", "/");
+            toFilepath = toFilepath.replaceAll("\\\\", "/");
             int lastIndexOf = filepath.lastIndexOf("/");
-            toFilepath = toFilepath + filepath.substring(lastIndexOf ,filepath.length());
-            File copy=new File(toFilepath);
+            toFilepath = toFilepath + filepath.substring(lastIndexOf, filepath.length());
+            File copy = new File(toFilepath);
             //复制文件夹
             if (!copy.exists()) {
                 copy.mkdir();
@@ -82,11 +86,11 @@ public class FileTest {
         } else {
             if (toFile.isDirectory()) {
                 String filepath = file.getAbsolutePath();
-                filepath=filepath.replaceAll("\\\\", "/");
+                filepath = filepath.replaceAll("\\\\", "/");
                 String toFilepath = toFile.getAbsolutePath();
-                toFilepath=toFilepath.replaceAll("\\\\", "/");
+                toFilepath = toFilepath.replaceAll("\\\\", "/");
                 int lastIndexOf = filepath.lastIndexOf("/");
-                toFilepath = toFilepath + filepath.substring(lastIndexOf ,filepath.length());
+                toFilepath = toFilepath + filepath.substring(lastIndexOf, filepath.length());
 
                 //写文件
                 File newFile = new File(toFilepath);
@@ -108,19 +112,20 @@ public class FileTest {
 
     /**
      * 操作方法
+     *
      * @param args
      */
-    public static void main(String[] args){
-        String pathExcelName = "C:/Users/xuqiang_duan/Desktop/test/test.xls";
-        String pathFileName = "C:/Users/xuqiang_duan/Desktop/test";
+    public static void main(String[] args) {
+        String pathExcelName = "C:/Users/xuqiang_duan/Desktop/非销售出库审批表 - 零号店一层自动售药机.xlsx";
+        String pathFileName = "E:/项目需求文档/IBM项目整理/售药机图片集/基础数据/test";
 
         try {
-             //读取Excel文件
-////            List<String> result = FileTest.readExcel(pathExcelName);
-//            for(String filmName : result){
-//                System.out.println(filmName);
-//                FileTest.doChange(pathFileName, filmName);
-//            }
+            //读取Excel文件
+            List<String> result = ExcelOperationByPoi.readExcel(pathExcelName);
+            for (String filmName : result) {
+                System.out.println(filmName);
+                FileTest.doChange(pathFileName, filmName);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

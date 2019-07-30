@@ -6,22 +6,23 @@ import java.util.concurrent.*;
 /**
  * {@link Executor}
  * {@link Executors}
- * @see Executor Executors
+ *
  * @author XuqiangDuan
  * @Date 2018/9/4 16:31
  * 线程池
+ * @see Executor Executors
  **/
-public class ThreadPoolDemo implements Runnable{
+public class ThreadPoolDemo implements Runnable {
 
 
     @Override
     public void run() {
-        for(int i = 0 ; i<10 ; ++i){
-            System.out.println(String.format("i = %s", i+"----------"+Thread.currentThread().getName()));
-            if(Thread.currentThread().getName().indexOf("2") > 0){
-                try{
+        for (int i = 0; i < 10; ++i) {
+            System.out.println(String.format("i = %s", i + "----------" + Thread.currentThread().getName()));
+            if (Thread.currentThread().getName().indexOf("2") > 0) {
+                try {
                     Thread.sleep(10L);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -32,7 +33,7 @@ public class ThreadPoolDemo implements Runnable{
 
 
         // TODO 自动生成的方法存根
-        ThreadPoolDemo t=new ThreadPoolDemo();
+        ThreadPoolDemo t = new ThreadPoolDemo();
 //        ExecutorService pool = Executors.newFixedThreadPool(6);
 
         /**
@@ -79,22 +80,15 @@ public class ThreadPoolDemo implements Runnable{
         ExecutorService executorService = Executors.newCachedThreadPool();
 
 
-
-        for(int i=0;i<15;i++){
+        for (int i = 0; i < 15; i++) {
             DemoRunnable demoRunnable = new DemoRunnable();
             poolExecutor.execute(demoRunnable);
-            System.out.println("线程池中线程数目："+poolExecutor.getPoolSize()+"，队列中等待执行的任务数目："+poolExecutor.getQueue().size()+"，已执行玩别的任务数目："+poolExecutor.getCompletedTaskCount());
+            System.out.println("线程池中线程数目：" + poolExecutor.getPoolSize() + "，队列中等待执行的任务数目：" + poolExecutor.getQueue().size() + "，已执行玩别的任务数目：" + poolExecutor.getCompletedTaskCount());
         }
         poolExecutor.shutdown();
 
 
         HashMap<String, Object> map = new HashMap<>();
-
-
-
-
-
-
 
 
     }

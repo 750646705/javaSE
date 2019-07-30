@@ -1,4 +1,5 @@
 package collection;
+
 import java.util.*;
 import java.util.function.Consumer;
 
@@ -26,9 +27,9 @@ public class IteratorDemo implements Iterator {
     public void forEachRemaining(Consumer action) {
 
     }
-    
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         IteratorDemo iteratorDemo = new IteratorDemo();
-        System.out.println("结果: "+iteratorDemo.hasNext());
+        System.out.println("结果: " + iteratorDemo.hasNext());
     }
 }

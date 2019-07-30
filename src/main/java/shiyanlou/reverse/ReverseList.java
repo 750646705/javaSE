@@ -1,20 +1,24 @@
 package shiyanlou.reverse;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.function.Consumer;
 
-class ReverseList<T> extends ArrayList<T>{
+class ReverseList<T> extends ArrayList<T> {
 
     private static final long serialVersionUID = 1L;
 
-    public ReverseList(Collection<T> c){ super(c);}
+    public ReverseList(Collection<T> c) {
+        super(c);
+    }
 
     /**
      * 实现反向迭代
+     *
      * @return
      */
-    public Iterable<T> reversed(){
+    public Iterable<T> reversed() {
 
         return new Iterable<T>() {
 

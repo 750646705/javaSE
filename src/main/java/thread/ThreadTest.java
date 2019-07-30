@@ -5,7 +5,7 @@ package thread;
  * @Date 2018/9/4 20:54
  **/
 public class ThreadTest {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
 //        DemoRunnable runnable = new DemoRunnable();
 //        Thread thread = new Thread(runnable, "Hello");
@@ -23,11 +23,11 @@ public class ThreadTest {
         Thread.yield();
 //        demoThread.run();
         demoThread.interrupt();
-        try{
+        try {
             Thread.sleep(10L);
-            System.out.println("线程:"+Thread.currentThread().getName()+"状态是否处于运行状态？   "+ demoThread.isAlive());
+            System.out.println("线程:" + Thread.currentThread().getName() + "状态是否处于运行状态？   " + demoThread.isAlive());
             demoThread.join(1L);
-        }catch(Exception e) {
+        } catch (Exception e) {
             System.err.println(String.format("异常信息:%s" + e));
         }
     }

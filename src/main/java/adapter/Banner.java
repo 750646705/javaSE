@@ -19,11 +19,11 @@ public class Banner {
         this.message = message;
     }
 
-    public void showWithParen(){
+    public void showWithParen() {
         System.err.println("######" + message);
     }
 
-    public void showWithAster(){
+    public void showWithAster() {
         System.err.println("******" + message);
 
     }
