@@ -30,5 +30,7 @@ public abstract class TestOne {
         System.out.println(int1.equals(int3));
         System.out.println(int1 == int3);
 
+
+
     }
 }
