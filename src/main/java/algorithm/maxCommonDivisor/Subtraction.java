@@ -1,6 +1,5 @@
 package algorithm.maxCommonDivisor;
 
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 /**
  * 求两个数的最大公约数
