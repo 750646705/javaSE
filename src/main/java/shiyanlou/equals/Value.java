@@ -4,7 +4,7 @@ package shiyanlou.equals;
  * @author XuqiangDuan
  * @Date 2018/8/21 13:45
  **/
-public class Value {
+public class Value{
     /**
      * 成员变量
      */
@@ -13,7 +13,6 @@ public class Value {
 
     /**
      * 有参构造方法
-     *
      * @param i
      * @param s
      */
@@ -24,23 +23,22 @@ public class Value {
 
     /**
      * 重写equals方法
-     *
      * @param o
      * @return
      */
     @Override
-    public boolean equals(Object o) {
-        if (o == null) {
+    public boolean equals(Object o){
+        if(o == null){
             return false;
-        } else {
-            if (o instanceof Value) {
+        }else{
+            if(o instanceof Value){
                 Value value = (Value) o;
-                if (value.getI() == this.getI() && value.getS().equals(this.getS())) {
+                if(value.getI() == this.getI() && value.getS().equals(this.getS())){
                     return true;
-                } else {
+                }else{
                     return false;
                 }
-            } else {
+            }else{
                 return false;
             }
         }

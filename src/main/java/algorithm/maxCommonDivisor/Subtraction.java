@@ -65,10 +65,10 @@ public class Subtraction {
     }
 
     public static void main(String[] args) {
-        timeConsume(5, 55);
-        timeConsume(66, 55);
-        timeConsume(10000, 10001);
-        timeConsume(10000, 10003);
+        timeConsume(5,55);
+        timeConsume(66,55);
+        timeConsume(10000,10001);
+        timeConsume(10000,10003);
         timeConsume(1350, 1266);
         timeConsume(1000000, 1000003);
     }

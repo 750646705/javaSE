@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author XuqiangDuan
  * @Date 2018/8/1 9:47
  **/
-public class BookShelf implements Aggregate {
+public class BookShelf implements Aggregate{
 
     /**
      * book数组
@@ -20,20 +20,18 @@ public class BookShelf implements Aggregate {
 
     /**
      * 取书
-     *
      * @param index
      * @return
      */
-    public Book getBookByIndex(int index) {
+    public Book getBookByIndex(int index){
         return books.get(index);
     }
 
     /**
      * 存书
-     *
      * @param book
      */
-    public void appendBook(Book book) {
+    public void appendBook(Book book){
 //        //使用数组
 //        if(length < books.length){
 //            this.books[length] = book;
@@ -65,7 +63,6 @@ public class BookShelf implements Aggregate {
 
     /**
      * 书架迭代器
-     *
      * @return
      */
     @Override

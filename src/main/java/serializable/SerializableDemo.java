@@ -15,8 +15,8 @@ public class SerializableDemo implements Serializable {
     private String name;
     private transient String address;
 
-    public void mailCheck() {
-        System.out.println("Mailing a check to " + name);
+    public void mailCheck(){
+        System.out.println("Mailing a check to "+ name);
     }
 
     public int getId() {

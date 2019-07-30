@@ -1,5 +1,3 @@
-import sun.awt.Symbol;
-
 /**
  * @author XUQIANG_DUAN
  * @date 2019/4/16
@@ -7,6 +5,7 @@ import sun.awt.Symbol;
  */
 public abstract class TestOne {
     public abstract void aVoid();
+<<<<<<< HEAD
 
     public static void main(String[] args) {
         String str1 = "abc";
@@ -31,5 +30,10 @@ public abstract class TestOne {
         System.out.println(int1 == int3);
 
 
+=======
+    public static void main(String[] args){
+            int i = (int)12.99;
+            System.out.println(i);
+>>>>>>> parent of 82f6f78... Reformat　Code 项目整体代码格式化
     }
 }

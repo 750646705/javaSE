@@ -9,7 +9,7 @@ import java.util.Date;
  **/
 public class main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         /**
          * 基本数据类型 无equals方法，==比较内容/值 Object equals和==都是比较引用
@@ -20,23 +20,23 @@ public class main {
         Object o1 = new Object();
         Object o2 = new Object();
         Boolean boo1e2 = o1.equals(o2);
-        Boolean boo12 = o1 == o2;
+        Boolean boo12 =  o1 == o2;
         //false false
-        System.out.println("result: boo1e2-" + boo1e2 + " boo12-" + boo12);
+        System.out.println("result: boo1e2-"+ boo1e2 +" boo12-"+ boo12);
 
         int i1 = 100;
         int i2 = 100;
         int i3 = 10000;
         int i4 = 10000;
         //true true
-        System.out.println("result: one-" + (i1 == i2) + "| two-" + (i3 == i4));
+        System.out.println("result: one-"+(i1 == i2)+"| two-"+(i3 == i4));
 
         char c1 = 'a';
         char c2 = 'a';
         char c3 = '汉';
         char c4 = '汉';
         //true true
-        System.out.println("result: one-" + (c1 == c2) + "| two-" + (c3 == c4));
+        System.out.println("result: one-"+(c1 == c2)+"| two-"+(c3 == c4));
 
 //        String s1 = new String("111111");
 //        String s2 = new String("111111");

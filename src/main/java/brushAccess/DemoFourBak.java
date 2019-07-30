@@ -5,12 +5,11 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 线程B使用iexplore浏览器依次打开指定链接
- *
  * @author XUQIANG_DUAN
  * @date 2019/4/17
  * @time 14:46
  */
-public class DemoFourBak extends Thread {
+public class DemoFourBak extends Thread{
 
     //博客链接集
     public String[] urls = {
@@ -47,14 +46,14 @@ public class DemoFourBak extends Thread {
     @Override
     public void run() {
         try {
-            for (int i = 0; i < 60000; ++i) {
+            for(int i=0 ; i<60000 ; ++i){
                 //随机选择博客 [0,13]
-                int url = i % 14;
+                int url = i%14;
                 //选定博客uri
                 URI uri = new URI(urls[url]);
-                System.err.println(i + "次运行 | 浏览器:iexplore.exe | 博客链接:" + url + " | 时间:" + System.currentTimeMillis());
+                System.err.println(i + "次运行 | 浏览器:iexplore.exe | 博客链接:"+url+" | 时间:" + System.currentTimeMillis());
                 //Runtime类在浏览器中打开指定链接
-                Runtime.getRuntime().exec("cmd /c start iexplore.exe " + uri);
+                Runtime.getRuntime().exec("cmd /c start iexplore.exe "+uri);
                 //等待5秒
                 TimeUnit.MILLISECONDS.sleep(4300);
                 //关闭浏览器

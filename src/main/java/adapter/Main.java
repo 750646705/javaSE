@@ -6,7 +6,7 @@ package adapter;
  **/
 public class Main {
 
-    public static void main(String[] agrs) {
+    public static void main(String[] agrs){
 
         Banner banner = new Banner("JAVA");
         Print print = new PrintBanner("Hello World!");

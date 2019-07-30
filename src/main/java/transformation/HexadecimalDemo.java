@@ -6,7 +6,7 @@ package transformation;
  * 备注:十六进制数
  **/
 public class HexadecimalDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         /**
          * Integer
          * A constant holding the minimum value an {@code int} can
@@ -18,6 +18,6 @@ public class HexadecimalDemo {
          * @Native public static final int MAX_VALUE = 0x7fffffff;
          */
         int i = 0X7fffffff;
-        System.out.println("i等于: " + i);
+        System.out.println("i等于: "+i);
     }
 }

@@ -63,9 +63,7 @@ public class DemoThree {
             //强强乐谈：为您推荐几部优秀的影视作品
             "https://blog.csdn.net/qq_32730819/article/details/87885283",
             //Python基础
-            "https://blog.csdn.net/qq_32730819/article/details/80683882",
-            //Nexus概述- Nexus 简介、安装&管理操作
-            "https://blog.csdn.net/qq_32730819/article/details/89510569"
+            "https://blog.csdn.net/qq_32730819/article/details/80683882"
     };
     //浏览器集
     private static String[] browsers = {
@@ -83,24 +81,24 @@ public class DemoThree {
             */
     };
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         try {
             Desktop desktop = Desktop.getDesktop();
-            for (int i = 0; i < 60000; ++i) {
+            for(int i=0 ; i<60000 ; ++i){
                 //随机选择博客 [0,26] & 浏览器打开[0,1]
-                int url = i % 27;
-                int browser = i % 2;
+                int url = i%27;
+                int browser = i%2;
                 //选定博客uri
                 URI uri = new URI(urls[url]);
                 //选定浏览器
                 String bro = browsers[browser];
-                System.err.println(i + "次运行 | 浏览器:" + bro + " | 博客链接:" + url + " | 时间:" + System.currentTimeMillis());
+                System.err.println(i + "次运行 | 浏览器:"+bro+" | 博客链接:"+url+" | 时间:" + System.currentTimeMillis());
                 //Runtime类在浏览器中打开指定链接
-                Runtime.getRuntime().exec("cmd /c start " + bro + uri);
+                Runtime.getRuntime().exec("cmd /c start "+bro+uri);
                 //等待5秒
                 TimeUnit.MILLISECONDS.sleep(2800);
                 //关闭浏览器
-                Runtime.getRuntime().exec("taskkill /F /IM " + bro);
+                Runtime.getRuntime().exec("taskkill /F /IM "+bro);
                 //等待1秒
                 TimeUnit.MILLISECONDS.sleep(10);
             }

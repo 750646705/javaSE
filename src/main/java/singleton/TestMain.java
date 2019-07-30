@@ -4,7 +4,7 @@ package singleton;
  * @author XuqiangDuan
  * @Date 2018/7/26 12:39
  **/
-public class TestMain extends Thread {
+public class TestMain extends Thread{
 
 
     public static void main(String[] args) {
@@ -51,17 +51,17 @@ public class TestMain extends Thread {
 
         SingletonEnum singletonEnum = SingletonEnum.INSTANCE;
         SingletonEnum singletonEnum1 = SingletonEnum.INSTANCE;
-        System.out.println("枚举式实现单例模式：" + singletonEnum.equals(singletonEnum1));
+        System.out.println("枚举式实现单例模式："+singletonEnum.equals(singletonEnum1));
 
     }
 
     @Override
-    public void run() {
+    public void run(){
         Singleton obj = Singleton.getInstance();
-        System.out.println(getName() + ": obj = " + obj);
+        System.out.println(getName()+": obj = "+obj);
     }
 
-    public TestMain(String name) {
+    public TestMain(String name){
         super(name);
     }
 

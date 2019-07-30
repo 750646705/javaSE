@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class DemoTwo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         /**
          * 使用默认浏览器打开指定链接刷新
          * 备注：由于CSDN限制，该方法的时间间隔必须大于1分钟，访问才有效
@@ -23,13 +23,13 @@ public class DemoTwo {
          */
         try {
             Desktop desktop = Desktop.getDesktop();
-            for (int i = 0; i < 600; ++i) {
+            for(int i=0 ; i<600 ; ++i){
                 //创建URI统一资源标识符
                 URI uri = new URI("https://blog.csdn.net/qq_32730819/article/details/89314725");
                 //使用默认浏览器打开指定链接
                 //desktop.browse(uri);
                 //Runtime类在浏览器中打开指定链接
-                Runtime.getRuntime().exec("cmd /c start firefox " + uri);
+                Runtime.getRuntime().exec("cmd /c start firefox "+uri);
                 System.err.println(i + "次运行时间为：" + System.currentTimeMillis());
                 //等待30秒
                 TimeUnit.MILLISECONDS.sleep(30000);
@@ -41,5 +41,5 @@ public class DemoTwo {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }  
 }
