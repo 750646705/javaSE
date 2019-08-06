@@ -1,4 +1,4 @@
-package collection;
+package collection.llistDemo;
 import java.util.*;
 import java.util.stream.Collectors;
 
