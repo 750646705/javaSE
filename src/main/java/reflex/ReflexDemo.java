@@ -34,6 +34,12 @@ public class ReflexDemo {
         return "ReflexDemo hello -- " + str + " | " + string;
     }
 
+    static {
+        /**
+         * Class.forName(String str)调用会触发该类的static块
+         */
+        System.out.println("ReflexDemo static ————————————————————————————————————————————————————");
+    }
 
     public static void main(String[] args) {
 
@@ -44,11 +50,12 @@ public class ReflexDemo {
              * 1.通过Class静态方法forName()获取；
              * 2.类class方法；
              * 3.对象getClass()方法获取。
-             *
              * 以下以String为例
              */
             Class<? extends Object> aClass = Class.forName("java.lang.String");
+
             Class<? extends Object> bClsss = String.class;
+
             String string = new String("abcd");
             Class<? extends String> cClass = string.getClass();
             System.out.println("" + aClass + "\n" + bClsss.getName() + "\n" + cClass.getTypeName());
@@ -80,9 +87,16 @@ public class ReflexDemo {
 
             /**
              * 反射创建对象
+             * 1.Class.newInstance();
+             * 2.Class ——> Constructor.newInstance()
              */
-            ReflexDemo reflexDemo = (ReflexDemo) rClass.newInstance();
-            System.out.println(reflexDemo.hello("Java"));
+            ReflexDemo reflexDemoF = (ReflexDemo) rClass.newInstance();
+            System.out.println(reflexDemoF.hello("First"));
+
+            Constructor<?> cons = rClass.getConstructor(new Class[]{});
+            ReflexDemo reflexDemoS = (ReflexDemo) cons.newInstance(new Object[]{});
+            System.out.println(reflexDemoS.hello("Second"));
+
 
             /**
              * 反射调用方法
@@ -91,9 +105,9 @@ public class ReflexDemo {
             Method helloMethod = rClass.getMethod("hello", String.class);
             Object result = helloMethod.invoke(object, "JavaScript");
             System.out.println(result);
-
+            //多参数方法调用
             Method helloMethodN = rClass.getMethod("hello", new Class[]{String.class, String.class});
-            Object resultN = helloMethodN.invoke(object, new Object[] {"one","two"});
+            Object resultN = helloMethodN.invoke(object, new Object[]{"one", "two"});
             System.out.println(resultN);
 
 
