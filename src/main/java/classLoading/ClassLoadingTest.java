@@ -27,8 +27,33 @@ public class ClassLoadingTest {
          */
         System.out.println("System: " + System.getProperty("java.class.path"));
 
-        ClassLoader classLoader = null;
-        SecureClassLoader secureClassLoader = null;
+        try {
+
+            Class<?> classT = Class.forName("classLoading.ClassLoadingTest");
+            System.out.println("classT :" + classT.getClassLoader());
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("————————————————————————————————————————————————————————————");
+        //系统类加载器
+        System.out.println(ClassLoader.getSystemClassLoader());
+        //扩展类加载器
+        System.out.println(ClassLoader.getSystemClassLoader().getParent());
+        //启动类加载器 —— 为null /*事实上，由于启动类加载器无法被Java程序直接引用，因此JVM默认直接使用 null 代表启动类加载器*/
+        System.out.println(ClassLoader.getSystemClassLoader().getParent().getParent());
+        System.out.println("————————————————————————————————————————————————————————————");
+        try {
+
+            ClassLoader classLoader = new ClassLoader() {
+            };
+            System.out.println("测试类加载器" + classLoader.toString());
+            Class<?> loadClass = classLoader.loadClass("java.lang.String");
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
 
     }
